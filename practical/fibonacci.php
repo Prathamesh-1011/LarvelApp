@@ -1,28 +1,32 @@
 <?php
-function fibonacci($n) {
-    if ($n <= 0) {
-        return [];
-    } elseif ($n == 1) {
-        return [0];
-    } elseif ($n == 2) {
-        return [0, 1];
-    } else {
-        $sequence = [0, 1];
-        for ($i = 2; $i < $n; $i++) {
-            $next = $sequence[$i - 1] + $sequence[$i - 2];
-            $sequence[] = $next;
-        }
-        return $sequence;
+
+// Function to generate and print the Fibonacci sequence up to 'n' terms
+function generateFibonacci($n) {
+    $fibonacci = array(); // Create an empty array to store the Fibonacci sequence
+    
+    // Initialize the first two Fibonacci numbers
+    $fibonacci[0] = 0;
+    $fibonacci[1] = 1;
+    
+    // Generate and store the Fibonacci sequence
+    for ($i = 2; $i < $n; $i++) {
+        $fibonacci[$i] = $fibonacci[$i - 1] + $fibonacci[$i - 2];
     }
+    
+    return $fibonacci;
 }
 
-$n = 10; // You can change this to the number of terms you want
+// Number of Fibonacci terms to generate
+$numTerms = 10;
 
-$fibonacciSequence = fibonacci($n);
+// Call the generateFibonacci function to get the sequence
+$fibonacciSequence = generateFibonacci($numTerms);
 
-echo "Fibonacci sequence up to $n terms: ";
-foreach ($fibonacciSequence as $number) {
-    echo $number . " ";
+// Display the Fibonacci sequence
+echo "Fibonacci sequence for the first $numTerms terms: ";
+foreach ($fibonacciSequence as $term) {
+    echo $term . " ";
 }
+
 ?>
 
