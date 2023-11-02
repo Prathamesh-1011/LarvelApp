@@ -1,43 +1,35 @@
 <?php
+namespace Practical;
 
-class Practical {
-    // Static function to print "Hello, World!"
+class practical {
+    /**
+     * Function to print "Hello, World!"
+     */
     public static function printHello() {
         echo "Hello, World!\n";
     }
 
-    // Static function to add two numbers
+    /**
+     * Function to add two numbers
+     * @param int $num1 The first number
+     * @param int $num2 The second number
+     * @return int The sum of the two numbers
+     */
     public static function add($num1, $num2) {
         return $num1 + $num2;
     }
 
-    // Static function to generate a Fibonacci sequence
+    /**
+     * Function to generate a Fibonacci sequence
+     * @param int $n The number of elements in the Fibonacci sequence
+     * @return array An array containing the Fibonacci sequence
+     */
     public static function generateFibonacciSequence($n) {
-        $fibonacci = array();
-        $a = 0;
-        $b = 1;
-
-        for ($i = 0; $i < $n; $i++) {
-            $fibonacci[] = $a;
-            $temp = $a + $b;
-            $a = $b;
-            $b = $temp;
+        $fibonacciSequence = [0, 1];
+        for ($i = 2; $i < $n; $i++) {
+            $fibonacciSequence[$i] = $fibonacciSequence[$i - 1] + $fibonacciSequence[$i - 2];
         }
-
-        return $fibonacci;
+        return $fibonacciSequence;
     }
 }
-
-// Example usage with user input:
-Practical::printHello();
-
-echo "Enter two numbers for addition:\n";
-$num1 = (float)readline("Number 1: ");
-$num2 = (float)readline("Number 2: ");
-$result = Practical::add($num1, $num2);
-echo "Sum: " . $result . "\n";
-
-echo "Enter the number of terms for the Fibonacci sequence:\n";
-$n = (int)readline("Number of terms: ");
-$fibonacciSequence = Practical::generateFibonacciSequence($n);
-echo "Fibonacci Sequence: " . implode(", ", $fibonacciSequence) . "\n";
+?>
