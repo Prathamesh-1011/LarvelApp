@@ -16,6 +16,7 @@ class PracticalTest extends TestCase
     {
         $this->assertEquals(practical::add(1,3), 4);
     }
+    
 }
 
 ?>
