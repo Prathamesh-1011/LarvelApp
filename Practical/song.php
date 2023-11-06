@@ -1,5 +1,7 @@
 <?php
 
+namespace Practical;
+
 class Song {
     // Properties
     private $title;
@@ -48,7 +50,13 @@ class Song {
     }
 
     public function setTempo($tempo) {
-        $this->tempo = $tempo;
+        if (!is_int($tempo) && !is_numeric($tempo)) {
+            throw new \InvalidArgumentException("Tempo must be an integer or a valid integer string.");
+        }
+        if (is_numeric($tempo) && strpos($tempo, '.') !== false) {
+            throw new \InvalidArgumentException("Tempo cannot be a float.");
+        }
+        $this->tempo = (int)$tempo; // Ensure tempo is stored as an integer
     }
 }
 
