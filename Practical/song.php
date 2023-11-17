@@ -1,6 +1,6 @@
 <?php
 
-namespace Practical;
+namespace Practicals;
 
 class Song {
     // Properties
