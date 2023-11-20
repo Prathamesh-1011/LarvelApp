@@ -9,13 +9,13 @@ class Song {
     private $genre;
     private $tempo;
 
-    // Constructor
-    public function __construct($title, $artist, $genre, $tempo) {
-        $this->title = $title;
-        $this->artist = $artist;
-        $this->genre = $genre;
-        $this->tempo = $tempo;
-    }
+    // // Constructor
+    // public function __construct($title, $artist, $genre, $tempo) {
+    //     $this->title = $title;
+    //     $this->artist = $artist;
+    //     $this->genre = $genre;
+    //     $this->tempo = $tempo;
+    // }
 
     // Getter and Setter functions for Title
     public function getTitle() {
@@ -60,16 +60,16 @@ class Song {
     }
 }
 
-// Example usage:
-$song = new Song("Stay with me", "Punch", "KPop", 72);
-echo "Title: " . $song->getTitle() . "\n";
-echo "Artist: " . $song->getArtist() . "\n";
-echo "Genre: " . $song->getGenre() . "\n";
-echo "Tempo: " . $song->getTempo() . "\n";
+// // Example usage:
+// $song = new Song("Stay with me", "Punch", "KPop", 72);
+// echo "Title: " . $song->getTitle() . "\n";
+// echo "Artist: " . $song->getArtist() . "\n";
+// echo "Genre: " . $song->getGenre() . "\n";
+// echo "Tempo: " . $song->getTempo() . "\n";
 
-// Modify the title and tempo
-$song->setTitle("Everytime");
-$song->setTempo(120);
+// // Modify the title and tempo
+// $song->setTitle("Everytime");
+// $song->setTempo(120);
 
-echo "Updated Title: " . $song->getTitle() . "\n";
-echo "Updated Tempo: " . $song->getTempo() . "\n";
+// echo "Updated Title: " . $song->getTitle() . "\n";
+// echo "Updated Tempo: " . $song->getTempo() . "\n";

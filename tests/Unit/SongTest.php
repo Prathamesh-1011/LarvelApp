@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
-require(__DIR__.'/../../Practical/song.php');
+require(__DIR__.'/../../Practical/Song.php');
 use Practical\Song;
 
 
