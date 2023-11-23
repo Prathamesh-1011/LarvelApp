@@ -31,32 +31,37 @@ Route::get('/veggies/{NameOfVeggie}', function (string $NameOfVeggie) {
 })->whereIn('NameOfVeggie', ['aaloo', 'gobhi', 'bhindi','baigan']);
 
 Route::get('/songs_static', function () {
-    return view('songs');
+    return view('songs_static');
 });
 
-Route::get('/songs_static', function () {
-    $song1 = new Song();
-    $song1->setTitle("Stay With Me");
-    $song1->setArtist("Chanyeol and Punch");
-
-    $song2 = new Song();
-    $song2->setTitle("Ice Cream");
-    $song2->setArtist("BlankPink");
-
-    $song3 = new Song();
-    $song3->setTitle("Love you like a love song");
-    $song3->setArtist("Salena Gomez");
-
-    $song4 = new Song();
-    $song4->setTitle("Monalisa");
-    $song4->setArtist("mxmtoon");
-
-    return view('songs',[ 'songs' => [ $song1, $song2, $song3, $song4 ] ] );
+Route::get('/songs_spotify', function () {
+    return view('songs_spotify');
 });
 
 // reading From database
 Route::get('/songs', function () {
     return view('songs', [ 'songs' => Song::all() ] );
 });
+
+// Route::get('/songs_static', function () {
+//     $song1 = new Song();
+//     $song1->setTitle("Stay With Me");
+//     $song1->setArtist("Chanyeol and Punch");
+
+//     $song2 = new Song();
+//     $song2->setTitle("Ice Cream");
+//     $song2->setArtist("BlankPink");
+
+//     $song3 = new Song();
+//     $song3->setTitle("Love you like a love song");
+//     $song3->setArtist("Salena Gomez");
+
+//     $song4 = new Song();
+//     $song4->setTitle("Monalisa");
+//     $song4->setArtist("mxmtoon");
+
+//     return view('songs',[ 'songs' => [ $song1, $song2, $song3, $song4 ] ] );
+// });
+
 
 ?>

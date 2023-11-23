@@ -17,4 +17,22 @@ class SongsTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /**
+     * Test for /songs_static endpoint.
+     * This test intentionally fails by asserting a 404 status.
+     */
+    public function testSongsStaticNotFound(): void
+    {
+        $response = $this->get('/songs_static');
+
+        $response->assertStatus(200); 
+    }
+
+    public function testSongsSpotifyNotFound(): void
+    {
+        $response = $this->get('/songs_spotify');
+
+        $response->assertStatus(200); 
+    }
 }

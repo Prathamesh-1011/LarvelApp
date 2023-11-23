@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use PHPUnit\Framework\TestCase;
 
 require(__DIR__.'/../../Practical/Song.php');
-use Practical\Song;
+use Practicals\Song;
 
 
 class SongTest extends TestCase {
